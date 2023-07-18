@@ -99,8 +99,7 @@ equalsButton.addEventListener('click', () => {
   }
 
   display.textContent = displayValue;
-  displayValue = '';
-  arg1 = '';
+  arg1 = displayValue;
   arg2 = '';
   operator = '';
   countOperatorClicks = 0;

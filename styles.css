@@ -24,6 +24,7 @@ body {
     height: 95px;
     font-size: 50px;
     overflow: auto;
+    text-align: right;
 }
 
 button {
@@ -57,5 +58,10 @@ button:active {
     box-sizing: border-box;
     width: 360px;
     height: 90px;
-    border-top: ;
+    background-color: #7087d3;
+}
+
+.operator,
+.equals{
+    background-color: #b4a7d6;
 }
