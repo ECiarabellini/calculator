@@ -13,15 +13,16 @@ body {
 .calculator {
     border: 12px solid #36454F;
     width: 360px;
-    height: 450px;
+    height: 540px;
     background-color: black;
 
 }
 
-#screen {
+#display {
     background-color: #ffe2ea;
     width: 360px;
     height: 95px;
+    font-size: 50px;
 }
 
 button {
@@ -34,12 +35,6 @@ button {
     padding: 0;
 }
 
-#equals {
-    box-sizing: border-box;
-    width: 180px;
-    height: 90px;
-}
-
 .row {
     display: flex; 
     flex: 1;
@@ -49,4 +44,17 @@ button {
 
 button:active {
     background-color: #5c6da5
+}
+
+#equals {
+    box-sizing: border-box;
+    width: 180px;
+    height: 90px;
+}
+
+#clear {
+    box-sizing: border-box;
+    width: 360px;
+    height: 90px;
+    border-top: ;
 }
