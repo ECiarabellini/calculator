@@ -11,7 +11,12 @@ function multiply(a, b) {
 };
 
 function divide(a,b) {
+  if (b == 0) {
+    return "ERR div by 0"
+  }
+  else {
     return a/b;
+  };
 };
 
 let arg1;
@@ -23,10 +28,8 @@ let operatorPrior;
 
 function operate (arg1, operator, arg2){
   let functionObj = window[operator];  //turns operator (a string) into an object that can be passed as a function name
-  console.log(`operator rn is: ${operator}`)
   let num = functionObj(arg1, arg2);
-  //return Math.round(num *);
-  return num;
+  return Math.round(num *100000000000)/100000000000;
 }
 
 

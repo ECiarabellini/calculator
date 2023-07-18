@@ -23,6 +23,7 @@ body {
     width: 360px;
     height: 95px;
     font-size: 50px;
+    overflow: auto;
 }
 
 button {
