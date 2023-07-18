@@ -22,7 +22,11 @@ let subTotal;
 let operatorPrior;
 
 function operate (arg1, operator, arg2){
-    return operator(arg1, arg2);
+  let functionObj = window[operator];  //turns operator (a string) into an object that can be passed as a function name
+  console.log(`operator rn is: ${operator}`)
+  let num = functionObj(arg1, arg2);
+  //return Math.round(num *);
+  return num;
 }
 
 
@@ -65,8 +69,7 @@ buttonsOperators.forEach((opButton)=>{
     else if (countOperatorClicks > 1) {
       arg2 = displayValue;
       console.log(`arg2 is: ${arg2}`);
-      let functionObj = window[operatorPrior]; //turns operator (a string) into an object that can be passed as a function name
-      subTotal = operate (arg1, functionObj, arg2);
+      subTotal = operate (arg1, operatorPrior, arg2);
       display.textContent = subTotal;
       arg1 = subTotal;
       console.log(`subTotal arg1 is: ${arg1}`);
@@ -83,10 +86,15 @@ buttonsOperators.forEach((opButton)=>{
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener('click', () => {
-  arg2 = displayValue;
-  console.log(`arg2 is: ${arg2}`);
-  let functionObj = window[operator]; //turns operator (a string) into an object that can be passed as a function name
-  displayValue = operate (arg1, functionObj, arg2);
+  if (!arg1 || !operator){
+    arg1 = displayValue;
+  }
+  else {
+    arg2 = displayValue;
+    console.log(`arg2 is: ${arg2}`);
+    displayValue = operate (arg1, operator, arg2);
+  }
+
   display.textContent = displayValue;
   displayValue = '';
   arg1 = '';
